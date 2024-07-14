@@ -47,18 +47,31 @@
                 <a href="{% url 'feature' %}" class="nav-item nav-link">Feature</a>
                 <a href="{% url 'advisor' %}" class="nav-item nav-link">Advisor</a>
                 <a href="{% url 'review' %}" class="nav-item nav-link">Review</a>
+                <a href="{% url 'registro' %}" class="nav-item nav-link">registro</a>
+
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu">
                         <a href="{% url 'blog' %}" class="dropdown-item">Blog Page</a>
                         <a href="{% url 'single' %}" class="dropdown-item">Single Page</a>
-                        
                     </div>
                 </div>
                 <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'add_comment' %}" class="nav-item nav-link">comentario</a>
                 <a href="{% url 'login'  %}" class="nav-item nav-link">Login</a>
                 <a href="{% url 'subida_casos' %}" class="nav-item nav-link">Casos</a>
+                <div class="ml-auto navbar-custom-icons">
+                    {% if user.is_authenticated %}
+                        <span class="user-name">{{ user.username }}</span>
+                        <a class="text-white logout-icon" href="#" title="Cerrar sesión" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-user"></i></a>
+                        <form id="logout-form" method="POST" action="{% url 'logout' %}" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                    {% else %}
+                        <a class="text-white" href="{% url 'login' %}" title="Iniciar sesión"><i class="fas fa-user"></i></a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
