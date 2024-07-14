@@ -1571,44 +1571,36 @@ a:focus {
     background-color: #0056b3;
 }
 
-/* Estilos para el formulario de subir archivos */
-#uploadForm {
-    text-align: center;
-    margin-top: 50px; /* Ajusta este valor según sea necesario para evitar la superposición */
+
+/* Estilos para el formulario de subir caso */
+#upload-form {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ddd;
     background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-#fileToUpload {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 100%;
-    max-width: 300px;
-    font-size: 16px;
-}
-
-input[type="button"] {
+#upload-form button[type="submit"] {
     background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
+    border-radius: 3px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-input[type="button"]:hover {
+#upload-form button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-#message {
+/* Estilos para el título de sección */
+.section-title-upload {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
     text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 180px; /* Ajusta este valor según sea necesario */
 }
 
-.custom-margin {
-    margin-top: 150px; /* Ajusta el valor según sea necesario */
-}

@@ -34,31 +34,31 @@
 <!-- Nav Bar Start -->
 <div class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container-fluid">
-        <a href="index.html" class="navbar-brand">Confer</a>
+        <a href="index.html" class="navbar-brand">Lex</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav ml-auto">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="feature.html" class="nav-item nav-link">Feature</a>
-                <a href="advisor.html" class="nav-item nav-link">Advisor</a>
-                <a href="review.html" class="nav-item nav-link">Review</a>
+                <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                <a href="{% url 'service' %}" class="nav-item nav-link">Service</a>
+                <a href="{% url 'feature' %}" class="nav-item nav-link">Feature</a>
+                <a href="{% url 'advisor' %}" class="nav-item nav-link">Advisor</a>
+                <a href="{% url 'review' %}" class="nav-item nav-link">Review</a>
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu">
-                        <a href="blog.html" class="dropdown-item">Blog Page</a>
-                        <a href="single.html" class="dropdown-item">Single Page</a>
+                        <a href="{% url 'blog' %}" class="dropdown-item">Blog Page</a>
+                        <a href="{% url 'single' %}" class="dropdown-item">Single Page</a>
                         
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link">Login</a>
-                <a href="subida_casos.html" class="nav-item nav-link">Casos</a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                <a href="{% url 'login'  %}" class="nav-item nav-link">Login</a>
+                <a href="{% url 'subida_casos' %}" class="nav-item nav-link">Casos</a>
             </div>
         </div>
     </div>
