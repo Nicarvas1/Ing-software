@@ -3,7 +3,7 @@ body {
     font-family: 'Lato', sans-serif;  /* Utiliza la fuente Lato de Google Fonts */
     background-color: #f8f9fa;  /* Color de fondo */
     color: #343a40;  /* Color del texto */
-    margin-top: 100px;  /* Elimina el margen predeterminado */
+   
     padding: 0;  /* Elimina el relleno predeterminado */
 }
 
@@ -23,4 +23,18 @@ body {
 
 .back-to-top:hover {
     background-color: #0056b3;
+}
+
+#boton_a{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  
+}
+
+#boton_a:hover{
+    background-color: #45a049;
 }
