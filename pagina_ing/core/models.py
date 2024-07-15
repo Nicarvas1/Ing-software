@@ -6,7 +6,9 @@ class Documentos(models.Model):
     codigo = models.CharField(max_length=4, primary_key=True)
     nombre_caso = models.CharField(max_length=250)
     archivo = models.FileField(upload_to='documentos/')
-
+    def __str__(self):
+        return self.nombre_caso+" ("+ self.codigo+")"+" ("+ self.archivo+")"
+      
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()

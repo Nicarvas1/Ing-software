@@ -6,6 +6,9 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.views import LogoutView
 from .views import registro 
 from django.contrib.auth import views as auth_views
+from .models import Documentos
+from .forms import DocumentForm
+
 urlpatterns = [
     path('', views.home, name='home'),  # Esta línea define la URL para la raíz del sitio
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
@@ -24,6 +27,6 @@ urlpatterns = [
     path('comments/', views.comment_list, name='comment_list'),
     path('comment/edit/<int:comment_id>/', views.comment_edit, name='comment_edit'),
     path('comment/delete/<int:comment_id>/', views.comment_delete, name='comment_delete'),
-
+    path('documents/', views.document_list, name='document_list'),
 
 ]

@@ -29,6 +29,7 @@
 <body>
     <body class="page">
         {% include 'core/header.html' %}
+        {% csrf_token %}
 
         <h1>Add Comment</h1>
         <form method="post">

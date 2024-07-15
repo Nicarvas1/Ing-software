@@ -8,6 +8,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 from .models import Comment
 from .forms import CommentForm  # Asegúrate de crear un formulario de comentarios
 from .forms import *
+from .forms import DocumentForm
+from .models import Documentos
 
 def home(request):
     return render(request, 'core/index.html')
@@ -42,6 +44,12 @@ def service(request):
 def single(request):
     return render(request, 'core/single.html')
 
+@login_required
+def document_list(request):
+    documents = Documentos.objects.all()
+    return render(request, 'document_list.html', {'documents': documents})
+
+@staff_member_required
 def subir_casos(request):
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
@@ -102,3 +110,13 @@ def comment_delete(request, comment_id):
         comment.delete()
         return redirect('comment_list')
     return render(request, 'comment_delete.html', {'comment': comment})
+
+
+
+def search_documents(request):
+    query = request.GET.get('q')
+    if query:
+        documents = Documentos.objects.filter(name__icontains=query)
+    else:
+        documents = Documentos.objects.all()
+    return render(request, 'document_list.html', {'documents': documents})
